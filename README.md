@@ -17,6 +17,8 @@ El proyecto utiliza las siguientes librerías:
 - **Lombok**: Utilizado para simplificar el código Java mediante anotaciones que generan automáticamente métodos comunes como `getters`, `setters`, y constructores.
 
 - **ExtentReports**: Utilizado para la generación de reportes detallados y visuales de los resultados de las pruebas automatizadas.
+## Enunciado trabajo practico
+- **Buscar elemento y completar formularo**: Buscar elemento en la pagina y completar formulario, objetivo de esta practica es la manipulacion de elemento de la pagina.
 
 ## Ejecución del Proyecto
 
