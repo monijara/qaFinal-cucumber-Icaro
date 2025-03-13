@@ -23,7 +23,6 @@ public class EbaySearchTest {
     public void queElUsuarioNavegaALaPaginaDeEBay() {
         ChromeOptions options = new ChromeOptions();
         String pathChromeDriver = System.getProperty("user.dir") + "\\src\\main\\drivers\\chromedriver.exe";
-        ;
         System.out.println("[Info]Ruta driver " + pathChromeDriver);
         System.setProperty("webdriver.chrome.driver", pathChromeDriver);
 
