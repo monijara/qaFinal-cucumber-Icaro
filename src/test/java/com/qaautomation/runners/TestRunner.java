@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com.qaautomation.stepdefinitions",
         plugin = {"pretty", "html:target/cucumber-report.html"},
-        tags = "@BuscarWikiepedia"
+        tags = "@BugsFormOk"
 )
 public class TestRunner {
 

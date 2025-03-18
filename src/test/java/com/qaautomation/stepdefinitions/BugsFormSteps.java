@@ -7,6 +7,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -74,7 +75,8 @@ public class BugsFormSteps {
 
     @Then("el usuario visualiza el mensaje {string}")
     public void elUsuarioVisualizaElMensaje(String msj) {
-        this.formsPage.validarMsj(msj);
+        String mnsjRecuperado = this.formsPage.validarMsj();
+        Assert.assertEquals("[Error] El mensaje no es lo esoeradi",msj,mnsjRecuperado);
     }
 
     @After

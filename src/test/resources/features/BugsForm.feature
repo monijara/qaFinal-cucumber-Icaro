@@ -3,6 +3,7 @@ Feature: Completar formulario
 
   Background:
     Given el usuario se encuentra en la home de BugsForm
+
   @BugsFormOk
   Scenario Outline: El usuario completa los datos con valores correctos
     When el usuario ingres First Name "<FirstName>"
@@ -15,4 +16,5 @@ Feature: Completar formulario
     Then el usuario visualiza el mensaje "<msjValidacion>"
     Examples:
       | FirstName | LastName | Phonenunber | Country   | EmailAddress    | Password   | msjValidacion                                     |
+      | Pepe      | Gomez    | 3512323123  | Argentina | Gomez@gmail.com | 123Usuario | Succesfully registered the following information |
       | Pepe      | Gomez    | 3512323123  | Argentina | Gomez@gmail.com | 123Usuario | Successfully registered the following information |

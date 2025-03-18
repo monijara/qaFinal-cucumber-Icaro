@@ -16,3 +16,5 @@ Feature: Busqueda de productos en eBay
     Examples:
       | Elemento        | Categoria |
       | Electric Guitar | Musica    |
+      | armonica        | Musica    |
+      | ps5             | juegos    |
