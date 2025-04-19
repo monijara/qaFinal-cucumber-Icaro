@@ -46,7 +46,9 @@ public class ProductStoreSteps {
     @Then("el usuario visualiza el titulo {string}")
     public void elUsuarioVisualizaElTitulo(String titulo) {
         String result = this.productStoreHomePage.buscarCabecera();
-        Assert.assertTrue("[ERROR] No se encontro el titulo buscado: " + titulo, result.contentEquals(titulo));
+        boolean esValido = result.contentEquals(titulo);
+        System.out.println(esValido ? "El titulo buscado es el correcto" : "El titulo no es correcto");
+        Assert.assertTrue("[ERROR] No se encontro el titulo buscado: " + titulo, esValido);
     }
 
     @After("@BuscarWikiepedia")
