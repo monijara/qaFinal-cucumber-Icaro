@@ -34,28 +34,13 @@ public class BugsFormSteps {
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
 
         driver = new ChromeDriver(options);
-        driver.get("https://qa-practice.netlify.app/bugs-form");
+        driver.get("https://fgzelaya.com.ar/contact.html");
         formsPage = new FormsPage(driver);
     }
 
-    @When("el usuario ingres First Name {string}")
-    public void elUsuarioIngresFirstName(String firstName) {
-        this.formsPage.inputFirstName(firstName);
-    }
-
-    @And("el usuario ingres Last Name {string}")
-    public void elUsuarioIngresLastName(String lastName) {
-        this.formsPage.inputLastName(lastName);
-    }
-
-    @And("el usuario ingres Phone nunber {string}")
-    public void elUsuarioIngresPhoneNunber(String phoneNumber) {
-        this.formsPage.inputPhoneNunber(phoneNumber);
-    }
-
-    @And("el usuario ingres Country {string}")
-    public void elUsuarioIngresCountry(String country) {
-        this.formsPage.inputCountry(country);
+    @When("el usuario ingres Full Name {string}")
+    public void elUsuarioIngresFullName(String name) {
+        this.formsPage.inputFullName(name);
     }
 
     @And("el usuario ingres Email address {string}")
@@ -63,9 +48,14 @@ public class BugsFormSteps {
         this.formsPage.inputEmailAddress(email);
     }
 
-    @And("el usuario ingres Email Password {string}")
-    public void elUsuarioIngresEmailPassword(String pass) {
-        this.formsPage.inputEmailPassword(pass);
+    @And("el usuario ingres Phone nunber {string}")
+    public void elUsuarioIngresPhoneNunber(String phoneNumber) {
+        this.formsPage.inputPhoneNunber(phoneNumber);
+    }
+
+    @And("el usuario ingres Message {string}")
+    public void elUsuarioIngresMessage(String message) {
+        this.formsPage.inputMessage(message);
     }
 
     @And("el usuario hace clic boton Register")
@@ -76,7 +66,7 @@ public class BugsFormSteps {
     @Then("el usuario visualiza el mensaje {string}")
     public void elUsuarioVisualizaElMensaje(String msj) {
         String mnsjRecuperado = this.formsPage.validarMsj();
-        Assert.assertEquals("[Error] El mensaje no es lo esoeradi",msj,mnsjRecuperado);
+        Assert.assertEquals("[Error] El mensaje no es lo esperado",msj,mnsjRecuperado);
     }
 
     @After

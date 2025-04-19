@@ -8,36 +8,21 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class FormsPage extends BasePage {
 
-    private By inputFirstName = By.id("firstName");
-    private By inputLastName= By.id("lastName");
-    private By inputPhoneNunber= By.xpath("//input[@id='phone']");
-    private By inputEmail= By.id("emailAddress");
-    private By inputPassword= By.id("password");
+    private final By inputFullName = By.id("name");
+    private final By inputPhoneNunber= By.id("phone");
+    private final By inputEmail= By.id("email");
+    private final By inputMessage= By.id("message");
+    private final By btnRegister= By.id("submitButton");
 
-    private By btnRegister= By.id("registerBtn");
-
-    private By lblMsj= By.id("message");
+    private final By lblMsj= By.cssSelector("#submitSuccessMessage .fw-bolder");
 
     public FormsPage(WebDriver driver) {
         super(driver);
     }
 
-    public void inputFirstName(String firstName) {
-        WebElement inFirstName = this.driver.findElement(inputFirstName);
-        inFirstName.sendKeys(firstName);
-    }
-
-    public void inputLastName(String lastName) {
-        WebElement elemento = this.driver.findElement(this.inputLastName);
-        elemento.sendKeys(lastName);
-    }
-
-    public void inputPhoneNunber(String phoneNumber) {
-        WebElement elemento = this.driver.findElement(this.inputPhoneNunber);
-        elemento.sendKeys(phoneNumber);
-    }
-
-    public void inputCountry(String country) {
+    public void inputFullName(String name) {
+        WebElement inFirstName = this.driver.findElement(inputFullName);
+        inFirstName.sendKeys(name);
     }
 
     public void inputEmailAddress(String email) {
@@ -45,9 +30,14 @@ public class FormsPage extends BasePage {
         elemento.sendKeys(email);
     }
 
-    public void inputEmailPassword(String pass) {
-        WebElement elemento = this.driver.findElement(this.inputPassword);
-        elemento.sendKeys(pass);
+    public void inputPhoneNunber(String phoneNumber) {
+        WebElement elemento = this.driver.findElement(this.inputPhoneNunber);
+        elemento.sendKeys(phoneNumber);
+    }
+
+    public void inputMessage(String message) {
+        WebElement elemento = this.driver.findElement(this.inputMessage);
+        elemento.sendKeys(message);
     }
 
     public void clicBtnRegister() {
